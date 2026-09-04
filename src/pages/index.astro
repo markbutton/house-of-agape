@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const base = import.meta.env.BASE_URL;
+const configuredBase = import.meta.env.BASE_URL;
+const base = configuredBase.endsWith("/") ? configuredBase : `${configuredBase}/`;
 ---
 
 <BaseLayout title="House of Agape | Love, Self-Care & Healing" description="House of Agape creates welcoming spaces for rest, renewal, and practical self-care.">
