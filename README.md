@@ -1,6 +1,6 @@
 # House of Agape website
 
-Static V1 website built with [Astro](https://astro.build/) and prepared for GitLab Pages.
+Static V1 website built with [Astro](https://astro.build/) and prepared for GitHub Pages.
 
 ## Local development
 
@@ -21,11 +21,13 @@ npm run preview
 
 `dist/` is the production site output. It is generated and is not committed.
 
-## GitLab Pages
+## GitHub Pages
 
-The included `.gitlab-ci.yml` verifies every pipeline and deploys the default branch to GitLab Pages. For the default project Pages URL, the pipeline derives the correct asset path from `CI_PAGES_URL`.
+The included GitHub Actions workflow verifies, builds, and deploys `main` to GitHub Pages. It obtains the correct project path from GitHub Pages while building, so assets work both locally and at the default project URL.
 
-When connecting a custom domain, add the GitLab CI/CD variable `BASE_URL` with the value `/`, then configure the domain and HTTPS in **Deploy > Pages**.
+After the first push, open **Settings > Pages** in GitHub and select **GitHub Actions** as the publishing source. The site will then publish at `https://markbutton.github.io/<repository-name>/`.
+
+When connecting a custom domain, configure it through **Settings > Pages**. No `CNAME` file is needed for this deployment workflow.
 
 ## V1 integrations
 
