@@ -1,0 +1,17 @@
+---
+const base = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname.replace(base.replace(/\/$/, ""), "") || "/";
+const links = [
+  { href: base, path: "/", label: "Home" },
+  { href: `${base}about/`, path: "/about/", label: "Our Story" },
+  { href: `${base}experiences/`, path: "/experiences/", label: "Experiences" },
+  { href: `${base}resources/`, path: "/resources/", label: "Resources" },
+  { href: `${base}partner/`, path: "/partner/", label: "Partner With Us" },
+];
+---
+<header class="site-header">
+  <a class="brand" href={base} aria-label="House of Agape home"><span class="brand-mark" aria-hidden="true">✦</span><span>House of Agape</span></a>
+  <nav aria-label="Primary navigation">
+    {links.map((link) => <a class:list={{ active: currentPath === link.path }} href={link.href}>{link.label}</a>)}
+  </nav>
+</header>

@@ -1,13 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="House of Agape | Coming Soon">
+<BaseLayout title="House of Agape | Love, Self-Care & Healing" description="House of Agape creates welcoming spaces for rest, renewal, and practical self-care.">
   <section class="hero">
-    <p class="eyebrow">House of Agape</p>
-    <h1>A welcoming space for rest, renewal, and self-care.</h1>
-    <p class="intro">
-      Our full website is being thoughtfully prepared. Retreats, workshops, and healing resources are coming soon.
-    </p>
+    <div class="hero-copy"><p class="eyebrow">Love · Self-care · Healing</p><h1>Come in. Exhale. Begin again.</h1><p class="lede">House of Agape creates welcoming spaces to pause, reconnect, and practice the care that helps us move through life with more love.</p><div class="hero-actions"><a class="button" href={`${base}experiences/`}>Explore experiences</a><a class="text-link" href={`${base}about/`}>Meet House of Agape <span aria-hidden="true">→</span></a></div></div>
+    <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="arch arch-one"></div><div class="arch arch-two"></div><p>Make room for your healing.</p></div>
   </section>
+  <section class="statement section-shell"><p class="eyebrow">A different kind of gathering</p><h2>Faith-informed, welcoming, and made for real life.</h2><p>We believe self-care is a practical expression of love. Through reflective experiences, encouraging resources, and compassionate connection, House of Agape makes space for people to reset and grow—without needing to have it all figured out first.</p></section>
+  <section class="pathways section-shell"><div class="section-heading"><p class="eyebrow">Ways to connect</p><h2>Start where you are.</h2></div><div class="card-grid"><a class="path-card warm" href={`${base}experiences/`}><span class="card-number">01</span><h3>Experiences</h3><p>Retreats, workshops, and gatherings designed to help you rest, reflect, and reset.</p><span class="card-arrow" aria-hidden="true">→</span></a><a class="path-card rose" href={`${base}resources/`}><span class="card-number">02</span><h3>Resources</h3><p>Books, journals, creative tools, and self-care goods for your everyday practice.</p><span class="card-arrow" aria-hidden="true">→</span></a><a class="path-card sage" href={`${base}partner/`}><span class="card-number">03</span><h3>Partnerships</h3><p>Bring a meaningful wellness experience to your community, organization, or gathering.</p><span class="card-arrow" aria-hidden="true">→</span></a></div></section>
+  <section class="quote-band"><p>“Healing begins with self-love and self-care at the most basic human level.”</p><span>— The House of Agape vision</span></section>
+  <section class="founder-preview section-shell split-section"><div class="portrait-placeholder" aria-hidden="true"><span>AT</span></div><div><p class="eyebrow">Founded by Minister Altina Truss</p><h2>A ministry of compassion in motion.</h2><p>House of Agape was born from a desire to help people navigate life’s journey with love, accessible support, and room to heal one person at a time.</p><a class="text-link" href={`${base}about/`}>Read our story <span aria-hidden="true">→</span></a></div></section>
 </BaseLayout>
