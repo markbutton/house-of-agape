@@ -29,10 +29,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Install dependencies
-        # Astro's optional native image packages resolve by runner platform.
-        # Install keeps the lockfile as the version guide while selecting the
-        # Linux-compatible optional packages on GitHub-hosted runners.
-        run: npm install
+        run: npm ci
       - name: Check site
         run: npm run check
       - name: Build site
