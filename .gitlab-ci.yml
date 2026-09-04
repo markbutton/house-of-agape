@@ -1,0 +1,25 @@
+image: node:24-alpine
+
+stages:
+  - verify
+  - deploy
+
+verify:
+  stage: verify
+  script:
+    - npm ci
+    - npm run check
+    - npm run build
+
+deploy-pages:
+  stage: deploy
+  script:
+    - npm ci
+    # Use the Pages URL path for project pages. Set BASE_URL=/ as a CI/CD
+    # variable when a custom domain is connected.
+    - if [ -z "${BASE_URL}" ] && [ -n "${CI_PAGES_URL}" ]; then export BASE_URL="$(node -e 'console.log(new URL(process.env.CI_PAGES_URL).pathname)')"; fi
+    - npm run build
+  pages:
+    publish: dist
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
